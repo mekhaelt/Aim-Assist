@@ -1,14 +1,10 @@
 #include <Servo.h>
 
-Servo myServo;
+Servo Motor;
 
 const int signalPin = A0; //analog pin connected to the circuit output
 const int motorControlPin = 9; //digital ~ pin connected to the motor control wire
-const int N = 10; //numbers of readings for dynamic threshold
-int readings[N]; //array of size 10 to hold the readings
-int readIndex = 0; // index to track the current reading position
-int readingsTotal = 0; //sum of readings for average
-int averageReading = 0; //dynamic threshold
+int motorPosition = 0; // angle
 
 void setup() {
 
@@ -16,13 +12,9 @@ void setup() {
   pinMode(motorControlPin, OUTPUT); //setting motor control pin as output
   digitalWrite(motorControlPin, LOW); //setting motor to be off initially
 
-  for(int i = 0; i <= 10; i++){
-    readings[i] = 0; //initializing all readings to zero
-  }
-
-  myServo.attach(motorControlPin); //attaching the motor to the motor control pin
-  myServo.write(10); //starting position of the motor
-
+  Motor.attach(motorControlPin); //attaching the motor to the motor control pin
+  Motor.write(MotorPosition); //starting position of the motor
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -32,18 +24,41 @@ void loop() {
   Serial.println(signalValue);
 
 
-//  if(signalValue > averageReading){
-  if (signalValue > 750){
 
-    myServo.attach(9);
-    digitalWrite(motorControlPin, HIGH); 
-    myServo.write(110); //adjusts the motor 90 degrees
-    delay(2500);
-    myServo.write(10);
-    delay(2500);
-    digitalWrite(motorControlPin, LOW);
+  Servo1.write(motorPosition);
+
+
+  if (signalValue > 613 && motorPosition == 0){
+
+    delay(2000);
+    motorPosition++;
+    Motor.write(motorPosition);
+    delay(5);
 
   }
-  myServo.detach();
+  if (signalValue > 613 && motorPosition < 180){
+
+    
+    motorPosition++;
+    Motor.write(motorPosition);
+    delay(5);
+
+  }
+
+  else if (motorPosition == 180){
+    delay(2000)
+    motorPosition--;
+    Motor.write(motorPosition);
+    delay(5);
+  }
+
+  else if (motorPosition < 179 && motorPosition > 0){
+    
+    motorPosition--;
+    Motor.write(motorPosition);
+    delay(5);
+  }
+  
+  delay(3000);
 
 }
