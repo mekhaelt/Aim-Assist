@@ -29,18 +29,13 @@ void loop() {
   Motor.write(motorPosition);
 
 
-  if (signalValue > 613 && motorPosition == 0){
-
-    delay(2000);
+  if (signalValue > 670 && motorPosition == 0){
+    Serial.println(1);
+    delay(750);
     motorPosition = desiredAngle;
     Motor.write(motorPosition);
 
-    
-
-  }
-  else if (signalValue > 613 && motorPosition < desiredAngle){
-
-    delay(2000);
+    delay(1000);
     motorPosition = 0;
     Motor.write(motorPosition);
     delay(5);
