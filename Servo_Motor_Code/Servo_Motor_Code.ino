@@ -5,6 +5,7 @@ Servo Motor;
 int signalPin = A0; //analog pin connected to the circuit output
 int motorControlPin = 9; //digital ~ pin connected to the motor control wire
 int motorPosition = 0; // angle
+int desiredAngle = 90;
 
 void setup() {
 
@@ -31,37 +32,23 @@ void loop() {
   if (signalValue > 613 && motorPosition == 0){
 
     delay(2000);
-    motorPosition++;
+    motorPosition = desiredAngle;
     Motor.write(motorPosition);
-    delay(5);
-
-  }
-  if (signalValue > 613 && motorPosition < 180){
 
     
-    motorPosition++;
-    Motor.write(motorPosition);
-    delay(5);
 
   }
+  else if (signalValue > 613 && motorPosition < desiredAngle){
 
-  else if (motorPosition == 180){
     delay(2000);
-    motorPosition--;
+    motorPosition = 0;
     Motor.write(motorPosition);
     delay(5);
+
   }
 
-  else if (motorPosition < 179 && motorPosition > 0){
-    
-    motorPosition--;
-    Motor.write(motorPosition);
-    delay(5);
-  }
   
-  delay(3000);
-
-}
+  
   delay(3000);
 
 }
