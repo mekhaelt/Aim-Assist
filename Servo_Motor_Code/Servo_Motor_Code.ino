@@ -4,7 +4,7 @@ Servo Motor;
 
 int signalPin = A0; //analog pin connected to the circuit output
 int motorControlPin = 9; //digital ~ pin connected to the motor control wire
-int motorPosition = 0; // angle
+int motorPosition = 0; 
 int desiredAngle = 90;
 
 void setup() {
@@ -20,7 +20,6 @@ void setup() {
 
 void loop() {
 
-//  readingsTotal = readingsTotal - readings[readIndex]; //removed the oldest reading from the total
   int signalValue = analogRead(signalPin); //read the signal
   Serial.println(signalValue);
 
