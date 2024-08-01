@@ -12,32 +12,45 @@ int desiredAngle = 90;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(motorControlPin, OUTPUT); //setting motor control pin as output
-  digitalWrite(motorControlPin, LOW); //setting motor to be off initially
 
-  Motor.attach(motorControlPin); //attaching the motor to the motor control pin
-  Motor.write(motorPosition); //starting position of the motor
-  Serial.begin(9600);
+  // Set motor control pin as output
+  pinMode(motorControlPin, OUTPUT);  
+  // Initialize motor to be off
+  digitalWrite(motorControlPin, LOW); 
+
+  // Attach the motor to the motor control pin
+  Motor.attach(motorControlPin); 
+  // Set starting position of the motor
+  Motor.write(motorPosition); 
 }
 
 void loop() {
-  // Read the signal
+  // Read the analog signal
   int signalValue = analogRead(signalPin); 
+  // Print the signal value for debugging
   Serial.println(signalValue);
 
+  // Write current motor position
   Motor.write(motorPosition);
   
-  if (signalValue > 670 && motorPosition == 0){
+  // Check if signal value is above threshold and motor is in the initial position
+  if (signalValue > 670 && motorPosition == 0) {
+    // Print status for debugging
     Serial.println(1);
+    // Delay for stabilization
     delay(750);
+    // Move motor to desired angle
     motorPosition = desiredAngle;
     Motor.write(motorPosition);
 
+    // Hold position before resetting
     delay(1000);
+    // Reset motor position
     motorPosition = 0;
     Motor.write(motorPosition);
+    // Small delay for smooth movement
     delay(5);
-
   } 
+  // Delay before next loop iteration
   delay(3000);
 }
