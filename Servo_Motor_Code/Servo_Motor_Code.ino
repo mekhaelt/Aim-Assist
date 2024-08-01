@@ -2,13 +2,15 @@
 
 Servo Motor;
 
-int signalPin = A0; //analog pin connected to the circuit output
-int motorControlPin = 9; //digital ~ pin connected to the motor control wire
+// Analog pin connected to the circuit output
+int signalPin = A0; 
+
+// Digital pin connected to the motor control wire
+int motorControlPin = 9; 
 int motorPosition = 0; 
 int desiredAngle = 90;
 
 void setup() {
-
   Serial.begin(9600);
   pinMode(motorControlPin, OUTPUT); //setting motor control pin as output
   digitalWrite(motorControlPin, LOW); //setting motor to be off initially
@@ -19,15 +21,12 @@ void setup() {
 }
 
 void loop() {
-
-  int signalValue = analogRead(signalPin); //read the signal
+  // Read the signal
+  int signalValue = analogRead(signalPin); 
   Serial.println(signalValue);
 
-
-
   Motor.write(motorPosition);
-
-
+  
   if (signalValue > 670 && motorPosition == 0){
     Serial.println(1);
     delay(750);
@@ -39,10 +38,6 @@ void loop() {
     Motor.write(motorPosition);
     delay(5);
 
-  }
-
-  
-  
+  } 
   delay(3000);
-
 }
