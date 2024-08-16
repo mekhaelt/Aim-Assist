@@ -1,5 +1,7 @@
 # Aim Assist Project
 
+<img src="https://github.com/" width="385px" align="center">
+
 ## Overview
 
 The Aim Assist project develops a prosthetic arm that replicates the biomechanics of a human arm to shoot a basketball. Designed for individuals with upper limb disabilities or amputations, this prosthetic enhances physical activity and psychological well-being by enabling participation in sports.
