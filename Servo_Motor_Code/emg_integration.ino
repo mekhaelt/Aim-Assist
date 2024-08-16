@@ -33,10 +33,10 @@ void loop() {
   // Write current motor position
   Motor.write(motorPosition);
   
-  // Check if signal value is above threshold and motor is in the initial position
+  // Check if signal value is above threshold (3.27 V) and motor is in the initial position
   if (signalValue > 670 && motorPosition == 0) {
     // Print status for debugging
-    Serial.println(1);
+    Serial.println("Threshold Reached");
     // Delay for stabilization
     delay(750);
     // Move motor to desired angle
