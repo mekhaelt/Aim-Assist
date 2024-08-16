@@ -34,3 +34,7 @@ git clone https://github.com/your-github/aim-assist.git
 -   Attach the prosthetic arm following the personal fitting instructions.
 -   Calibrate the EMG sensors as per the user guide.
 -   Use the provided scripts to test and calibrate the shooting mechanism.
+
+## Collaboraters
+- Raiyan A [email](raiyanjaz@gmail.com)
+- Mekhael T [email](mekhaelt@gmail.com)
