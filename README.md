@@ -35,6 +35,6 @@ git clone https://github.com/your-github/aim-assist.git
 -   Calibrate the EMG sensors as per the user guide.
 -   Use the provided scripts to test and calibrate the shooting mechanism.
 
-## Collaboraters
-- Raiyan A [Contact](raiyanjaz@gmail.com)
-- Mekhael T [Contact](mekhaelt@gmail.com)
+## Collaborators
+- Raiyan A [Contact](mailto:raiyanjaz@gmail.com)
+- Mekhael T [Contact](mailto:mekhaelt@gmail.com)
