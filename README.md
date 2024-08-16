@@ -1,6 +1,8 @@
-# Aim Assist Project
+# Aim Assist
 
-<img src="https://github.com/mekhaelt/Aim-Assist/blob/main/gallery/prototype_1_printed (2).jpg" width="385px" align="center">
+<p align="center">
+  <img src="https://github.com/mekhaelt/Aim-Assist/blob/main/gallery/prototype_1_printed (2).jpg" width="385px" align="center">
+</p>
 
 ## Overview
 
