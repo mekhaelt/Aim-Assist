@@ -36,5 +36,5 @@ git clone https://github.com/your-github/aim-assist.git
 -   Use the provided scripts to test and calibrate the shooting mechanism.
 
 ## Collaboraters
-- Raiyan A [email](raiyanjaz@gmail.com)
-- Mekhael T [email](mekhaelt@gmail.com)
+- Raiyan A [Contact](raiyanjaz@gmail.com)
+- Mekhael T [Contact](mekhaelt@gmail.com)
